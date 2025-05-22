@@ -103,6 +103,20 @@ pytest --cov=app --cov-report=xml --asyncio-mode=auto tests/
 
 # Generate coverage with async event loop info
 pytest --cov=app --cov-report=term-missing --asyncio-mode=debug tests/
+
+# Run with minimum coverage threshold
+pytest --cov=app --cov-report=term-missing --cov-fail-under=80 --asyncio-mode=auto tests/
+```
+
+## Coverage Configuration
+
+Add to `pytest.ini`:
+```ini
+[pytest]
+asyncio_mode = auto
+addopts = --cov=app --cov-report=term-missing --cov-fail-under=80
+markers =
+    asyncio: mark test as async
 ```
 
 ## Async Test Quality Checklist

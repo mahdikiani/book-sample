@@ -81,12 +81,17 @@ pytest --cov=app tests/
 pytest --asyncio-mode=debug tests/
 ```
 
-## Async Test Configuration
+## Test Configuration
 
 Add to `pytest.ini`:
 ```ini
 [pytest]
 asyncio_mode = auto
+addopts = --cov=app --cov-report=term-missing --cov-fail-under=80
 markers =
     asyncio: mark test as async
+testpaths = tests
+python_files = test_*.py
+python_classes = Test*
+python_functions = test_*
 ```
