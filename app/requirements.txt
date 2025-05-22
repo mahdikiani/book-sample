@@ -1,0 +1,9 @@
+uvicorn
+fastapi
+pydantic[email]
+httpx
+
+python-dotenv
+
+beanie
+fastapi-mongo-base
